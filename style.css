@@ -1,0 +1,667 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Public+Sans:wght@300;400;700&display=swap');
+
+:root{
+    --color-primary: #7380ec;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363949;
+    --color-light: rgba(132,139,200,0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+
+
+    --card-border-radius:2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-theme-variables {
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0 ,0,0,0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+
+}
+
+* , *::after , *::before{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+}
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-dark);
+    background: var(--color-background);
+    overflow-x: hidden ;
+}
+
+
+
+.text-muted{
+    color: var(--color-info-dark);
+}
+.burger{
+    display: none;
+}
+
+.profile-pic{
+    width: 3rem;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 50%;
+   
+}
+img{
+    width: 100%;
+    display: block;
+}
+
+
+
+main{
+    position: relative;
+
+}
+
+main .container{
+    display: grid;
+    position: relative;
+    grid-template-columns: 14vw auto 23vw;
+    top: 2rem;
+    gap: 1rem;
+}
+#close{
+    display: none;
+}
+
+.danger{
+    color: var(--color-danger);
+}
+
+.primary{
+    color: var(--color-primary);
+}
+
+.warning{
+    color: var(--color-warning);
+}
+
+.success{
+    color: var(--color-success);
+}
+b{
+    color: var(--color-dark);
+}
+/* -----------LEFT---------------- */
+
+
+
+main .container .left{
+    display: flex;
+    height: 90vh;
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+
+/* ---------LOGO--------- */
+.left .left-top{
+    display: flex;
+    color: var(--color-dark);
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.left .left-top .logo span{
+    color: var(--color-danger);
+    font-size: 40px;
+    margin-left: 0;
+}
+
+/* ------------SIDEBAR--------- */
+.left .sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    
+}
+
+.left  .menu-items{
+    display: flex;
+    position: relative;
+    height: 3.5rem;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+.left .menu-items:hover{
+    color: var(--color-primary);
+    transform: translateX(3%);
+}
+
+.left .sidebar .active{
+    background: var(--color-light);
+    color: var(--color-primary);
+}
+
+.left  .sidebar .active:hover{
+    transform: translateX(0%);
+}
+.left .sidebar .active::before{
+    content: "";
+    height: 100%;
+    width: 0.5rem;
+    background: var(--color-primary);
+    position: absolute;
+   display: block;
+
+    
+}
+
+.left .sidebar span , .left .left-bottom span{
+    margin-left: 2.5rem;
+    font-size: 2rem;
+}
+
+
+.left h5 , .left .left-bottom h5{
+    margin-left: 1.5rem ;
+}
+.left .left-bottom{
+    margin-top: 8rem;
+}
+
+
+.left  .menu-items .message-count{
+    width: 1.9rem;
+    height: 1.3rem;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-info-light);
+    margin-left: 1rem ;
+    background: var(--color-danger);
+    border-radius: var(--border-radius-1);
+}
+
+
+/* --------------------MIDDLE---------------+ */
+
+main .container .middle{
+   margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+main .container .middle .middle-top{
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+main .container .middle-top input[type='date']{
+    background: var(--color-white);
+    padding: 0.5rem var(--card-padding);
+    border-radius: var(--border-radius-1);
+    color: var(--color-dark);
+}
+
+main .container .middle .middle-mid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+main .middle .middle-mid .card .card-right{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    border: 15px solid var(--color-primary);
+}
+
+main .middle .middle-mid .card .card-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .middle .middle-mid .card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+    height: 13rem;
+    margin-bottom: 2.5rem;
+       background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+main .middle .middle-mid .card:hover{
+    box-shadow: none;
+}
+
+main .middle .middle-mid .card .card-left{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: max-content;
+}
+
+main .middle .middle-mid .card-1 a{
+    background: var(--color-primary);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+main .middle .middle-mid .card-2 a{
+    background: var(--color-danger);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+
+}
+main .middle .middle-mid .card-3 a{
+    background: var(--color-success);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+   
+}
+main .middle .middle-mid .card a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+/* ------MIDDLE TABLE-------- */
+
+main .middle .middle-bottom table{
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    box-shadow: var(--box-shadow);
+}
+
+main .middle .middle-bottom table:hover{
+    box-shadow: none;
+}
+
+main .middle .middle-bottom table tbody tr td{
+    height: 2.7rem;
+    border-bottom: 1px solid var(--color-info-light);
+}
+
+main .middle .middle-bottom table tbody tr:last-child td{
+    border-bottom: none;
+}
+main .middle .middle-bottom table tbody tr td:last-child{
+    cursor: pointer;
+}
+main .middle .middle-bottom a{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+
+/* ----------RIGHT---------- */
+.right{
+    width: 95%;
+    margin: 0 auto;
+}
+
+main .container .right .right-top{
+    display: flex;
+    /* width: 70%;
+    margin: 0 auto; */
+    justify-content: center;
+    gap: 2.5rem;
+    align-items: center;
+    
+    
+    
+}
+.right .theme{
+    display: flex;
+    height: 2.3rem;
+    position: relative;
+}
+
+main .container .right .right-top .theme .light{
+    color: white;
+    /* background: var(--color-primary); */
+    background: var(--color-light);
+    padding: 0.4rem;
+    border-radius: var(--border-radius-2);
+    position: relative;
+   cursor: pointer;
+}
+main .container .right .right-top .theme .active{
+    background: var(--color-primary);
+}
+
+.right .theme .dark{
+    background: var(--color-info-light);
+    padding: 0.4rem;
+    border-radius: var(--border-radius-2);
+    position: relative;
+    cursor: pointer;
+}
+.right .profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right .profile .name{
+    text-align: right;
+    margin-right: 1rem;
+    width: 6rem;
+}
+
+/* ---------RIGHT MID--------- */
+
+.right .right-mid{
+    margin-top: 1rem;
+}
+
+.right .right-mid .right-card{
+    margin-top: 1rem;
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.right .right-mid .right-card:hover{
+    box-shadow: none;
+}
+
+.right .right-mid .right-card .right-text{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 14px;
+}
+
+.right .right-mid .right-card .right-text .card-content p{
+    line-height: 1.2em;
+}
+
+.right .right-mid .right-card .right-text .card-content small{
+ position: relative;
+ top: -0.3rem;   
+}
+
+.right .right-mid .right-card .right-text .profile-pic{
+  align-self: flex-start;
+
+}
+
+
+/* ----------RIGHT BOTTOM--------- */
+
+.right .right-bottom{
+    margin-top: 1rem;
+}
+
+.right .right-bottom .product-cards{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.right .right-bottom .product-cards .right-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-white);
+    padding: 1.3rem var(--card-padding);
+    border-radius: var(--border-radius-3);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+.right .right-bottom .product-cards .right-card:hover{
+    box-shadow: none;
+}
+
+
+
+.right .right-bottom .product-cards .right-card small{
+    display: block;
+}
+
+.right .right-bottom .product-cards .right-card a{
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.right .right-bottom .product-cards .right-card:nth-child(1) a{
+    background: var(--color-primary);
+}
+.right .right-bottom .product-cards .right-card:nth-child(2) a{
+    background: var(--color-danger);
+}
+.right .right-bottom .product-cards .right-card:nth-child(3) a{
+    background: var(--color-success);
+}
+
+.right .right-bottom .add-product{
+   text-align: center;
+   border: 2px dashed var(--color-primary);
+   padding: 1.3rem var(--card-padding);
+   border-radius: var(--border-radius-3);
+   box-shadow: var(--box-shadow);
+   transition: all 300ms ease;
+}
+
+.right .right-bottom .add-product:hover{
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* -------MEDIA QUERY-------- */
+
+/* TABLETS AND SMALL LAPTOPS */
+
+@media screen and (max-width : 1380px){
+   main .container{
+    width: 94%;
+    margin: 0 auto;
+    grid-template-columns: 7rem auto 23rem;
+    gap: 1.5rem;
+    
+   }
+   main .left .logo h1{
+    font-size: 25px;
+   }
+
+   main .left  .menu-items h5{
+    display: none;
+   }
+   main .left .menu-items{
+    width: 5.5rem;
+   }
+
+   main .container .middle .middle-mid{
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 0;
+     position: relative;
+   }
+
+
+   main .container .middle .middle-mid .card{
+   margin-bottom: 1rem;
+   gap: 0;
+   }
+   main .middle-bottom{
+    position: absolute;
+    width: 80vw;
+    transform: translateY(50rem);
+    
+    
+    
+   }
+   main .middle-bottom table{
+    width: 80vw;
+   }
+
+   main .middle-bottom table thead tr th:first-child , main .middle-bottom table thead tr th:last-child{
+    display: none;
+   } 
+  
+   main .middle-bottom table tbody tr td:first-child , main .middle-bottom table tbody tr td:last-child{
+    display: none;
+   }
+}
+
+
+@media screen and (max-width : 830px){
+    
+
+   
+    main .container{
+    width: 100%;
+    grid-template-columns: 1fr;
+
+   }
+
+   main .container .left{
+    position: fixed;
+    z-index: 5;
+    background: var(--color-white);
+    height: 100vh;
+    width: 18rem;
+    left: -100%;
+    top: 0;
+    padding-right: var(--card-padding);
+    display: none;
+    animation: showMenu 400ms ease forwards;
+   }
+
+   @keyframes showMenu{
+    to{
+        left: 0;
+    }
+   }
+
+   main .left  .menu-items h5{
+    display: inline;
+   }
+
+   main .left .sidebar a {
+    width: 100%;
+    height: 3.4rem;
+   }
+   main .left .left-bottom{
+    position: relative;
+    top: -6rem;
+   }
+
+  #close{
+     margin-top: 2.4rem; 
+    transform: translateX(50%); 
+    display: inline-block;
+    cursor: pointer;
+    
+  }
+
+  main .left .left-top{
+    display: flex;
+    align-items: center;
+    
+  }
+
+  /* ------------main------ */
+
+main {
+    margin: 5rem 0 5rem 0;
+    padding: 0 1rem;
+}
+
+  main .container .middle .middle-bottom{
+    position: relative;
+    width: 100%;
+    transform: translateY(0);
+    margin-top: 3rem;
+  }
+
+  main .container .middle .middle-bottom table{
+    width: 100%;
+    margin: 0;
+  }
+
+  /* -----top nav------ */
+
+  main .container .right .right-top{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--color-white);
+    box-shadow:  0 1rem 1rem var(--color-light);
+    padding: 0 0.8rem;
+    width: 100%;
+    height: 4.6rem;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    gap: 1rem;
+  }
+  main .container .right .right-top .profile .name{
+    display: none;
+  }
+  .burger{
+    display: inline-block;
+    left: 0;
+    margin-left: 2rem;
+    position: absolute;
+    font-size: 40px;
+    cursor: pointer;
+  }
+
+}
